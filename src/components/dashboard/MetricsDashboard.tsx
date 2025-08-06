@@ -146,8 +146,8 @@ export const MetricsDashboard: React.FC = () => {
   return (
     <div className="h-full p-6 bg-background overflow-auto">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold">Analytics Dashboard</h1>
-        <p className="text-muted-foreground">Track your sales performance and customer insights</p>
+        <h1 className="text-2xl font-mono-heading font-bold">Analytics Dashboard</h1>
+        <p className="font-body text-muted-foreground">Track your sales performance and customer insights</p>
       </div>
 
       {/* Key Metrics Cards */}

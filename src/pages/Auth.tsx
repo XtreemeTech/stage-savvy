@@ -152,16 +152,16 @@ const Auth = () => {
           </Link>
           <div className="flex items-center justify-center">
             <div className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              <h1 className="text-3xl font-bold tracking-tight">PRISM</h1>
+              <h1 className="text-3xl font-mono-heading font-bold tracking-tight">PRISM</h1>
             </div>
           </div>
-          <p className="text-sm text-muted-foreground">Customer Relationship Management</p>
+          <p className="text-sm font-body text-muted-foreground">Customer Relationship Management</p>
         </div>
 
         <Card className="border-muted/40 shadow-lg">
           <CardHeader className="space-y-1">
-            <CardTitle className="text-2xl text-center">Welcome</CardTitle>
-            <CardDescription className="text-center">
+            <CardTitle className="text-2xl font-mono-heading text-center">Welcome</CardTitle>
+            <CardDescription className="text-center font-body">
               Sign in to your account or create a new one
             </CardDescription>
           </CardHeader>

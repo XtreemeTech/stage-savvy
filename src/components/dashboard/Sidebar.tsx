@@ -39,7 +39,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentView, onViewChange }) =
             <Sparkles className="h-4 w-4 text-primary-foreground" />
           </div>
           <div>
-            <h1 className="text-lg font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            <h1 className="text-lg font-mono-heading font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
               PRISM
             </h1>
             <p className="text-xs text-muted-foreground">Customer Management</p>

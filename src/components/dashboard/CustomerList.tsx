@@ -134,8 +134,8 @@ export const CustomerList: React.FC = () => {
     <div className="h-full p-6 bg-background">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold">Customer List</h1>
-          <p className="text-muted-foreground">View and manage all your customers</p>
+          <h1 className="text-2xl font-mono-heading font-bold">Customer List</h1>
+          <p className="font-body text-muted-foreground">View and manage all your customers</p>
         </div>
         <Button onClick={() => setModalOpen(true)}>
           <Plus className="mr-2 h-4 w-4" />

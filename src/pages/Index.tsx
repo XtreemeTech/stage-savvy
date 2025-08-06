@@ -51,13 +51,13 @@ const Index = () => {
               <Star className="w-3 h-3 mr-1" />
               Customer Relationship Management
             </Badge>
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight animate-fade-in">
+            <h1 className="text-5xl md:text-6xl font-mono-heading font-bold tracking-tight animate-fade-in">
               Crystal Clear
               <span className="block bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                 Customer Management
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl lg:mx-0 mx-auto leading-relaxed animate-fade-in">
+            <p className="text-xl font-body text-muted-foreground max-w-2xl lg:mx-0 mx-auto leading-relaxed animate-fade-in">
               PRISM refracts your customer data into actionable insights. 
               Manage leads, track opportunities, and automate communications with precision.
             </p>
@@ -109,10 +109,10 @@ const Index = () => {
       {/* Features Section */}
       <section className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">
+          <h2 className="text-3xl font-mono-heading font-bold mb-4">
             Everything you need to manage customers
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg font-body text-muted-foreground max-w-2xl mx-auto">
             PRISM provides all the essential tools to nurture leads, track progress, and grow your business.
           </p>
         </div>
@@ -123,8 +123,8 @@ const Index = () => {
               <div className="h-12 w-12 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
                 <Users className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <CardTitle className="group-hover:text-primary transition-colors duration-300">Pipeline Management</CardTitle>
-              <CardDescription>
+              <CardTitle className="group-hover:text-primary transition-colors duration-300 font-mono-heading">Pipeline Management</CardTitle>
+              <CardDescription className="font-body">
                 Visual Kanban board with drag-and-drop functionality to track leads through your sales pipeline.
               </CardDescription>
             </CardHeader>
@@ -135,8 +135,8 @@ const Index = () => {
               <div className="h-12 w-12 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
                 <BarChart3 className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <CardTitle className="group-hover:text-primary transition-colors duration-300">Analytics Dashboard</CardTitle>
-              <CardDescription>
+              <CardTitle className="group-hover:text-primary transition-colors duration-300 font-mono-heading">Analytics Dashboard</CardTitle>
+              <CardDescription className="font-body">
                 Real-time insights into conversion rates, pipeline health, and revenue forecasting.
               </CardDescription>
             </CardHeader>
@@ -147,8 +147,8 @@ const Index = () => {
               <div className="h-12 w-12 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
                 <Mail className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <CardTitle className="group-hover:text-primary transition-colors duration-300">Email Automation</CardTitle>
-              <CardDescription>
+              <CardTitle className="group-hover:text-primary transition-colors duration-300 font-mono-heading">Email Automation</CardTitle>
+              <CardDescription className="font-body">
                 Automated email sequences triggered by pipeline stage changes to nurture leads effectively.
               </CardDescription>
             </CardHeader>
@@ -159,8 +159,8 @@ const Index = () => {
               <div className="h-12 w-12 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
                 <Shield className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <CardTitle className="group-hover:text-primary transition-colors duration-300">Secure & Private</CardTitle>
-              <CardDescription>
+              <CardTitle className="group-hover:text-primary transition-colors duration-300 font-mono-heading">Secure & Private</CardTitle>
+              <CardDescription className="font-body">
                 Enterprise-grade security with row-level security policies to protect your customer data.
               </CardDescription>
             </CardHeader>
@@ -171,8 +171,8 @@ const Index = () => {
               <div className="h-12 w-12 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
                 <Zap className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <CardTitle className="group-hover:text-primary transition-colors duration-300">Lightning Fast</CardTitle>
-              <CardDescription>
+              <CardTitle className="group-hover:text-primary transition-colors duration-300 font-mono-heading">Lightning Fast</CardTitle>
+              <CardDescription className="font-body">
                 Built with modern technology stack for instant page loads and real-time updates.
               </CardDescription>
             </CardHeader>
@@ -183,8 +183,8 @@ const Index = () => {
               <div className="h-12 w-12 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
                 <Sparkles className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <CardTitle className="group-hover:text-primary transition-colors duration-300">Smart Insights</CardTitle>
-              <CardDescription>
+              <CardTitle className="group-hover:text-primary transition-colors duration-300 font-mono-heading">Smart Insights</CardTitle>
+              <CardDescription className="font-body">
                 AI-powered analytics to identify patterns and opportunities in your customer data.
               </CardDescription>
             </CardHeader>
@@ -195,8 +195,8 @@ const Index = () => {
       {/* Testimonials Section */}
       <section className="container mx-auto px-4 py-20 bg-muted/10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Trusted by thousands of businesses</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-3xl font-mono-heading font-bold mb-4">Trusted by thousands of businesses</h2>
+          <p className="text-lg font-body text-muted-foreground max-w-2xl mx-auto">
             See what our customers say about their experience with PRISM CRM.
           </p>
         </div>
@@ -206,7 +206,7 @@ const Index = () => {
               <div className="flex items-center mb-4">
                 {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />)}
               </div>
-              <p className="text-muted-foreground mb-4">
+              <p className="font-body text-muted-foreground mb-4">
                 "PRISM transformed our sales process completely. We've seen a 40% increase in conversions since switching."
               </p>
               <div className="flex items-center">
@@ -226,7 +226,7 @@ const Index = () => {
               <div className="flex items-center mb-4">
                 {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />)}
               </div>
-              <p className="text-muted-foreground mb-4">
+              <p className="font-body text-muted-foreground mb-4">
                 "The automation features save us hours every week. The interface is intuitive and powerful."
               </p>
               <div className="flex items-center">
@@ -246,7 +246,7 @@ const Index = () => {
               <div className="flex items-center mb-4">
                 {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />)}
               </div>
-              <p className="text-muted-foreground mb-4">
+              <p className="font-body text-muted-foreground mb-4">
                 "Best CRM we've ever used. The analytics help us make data-driven decisions every day."
               </p>
               <div className="flex items-center">
@@ -267,15 +267,15 @@ const Index = () => {
       <section className="container mx-auto px-4 py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-6">Why businesses choose PRISM</h2>
+            <h2 className="text-3xl font-mono-heading font-bold mb-6">Why businesses choose PRISM</h2>
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
                 <div className="h-8 w-8 rounded-full bg-green-100 dark:bg-green-900/20 flex items-center justify-center flex-shrink-0 mt-1">
                   <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">Increase Conversion Rates</h3>
-                  <p className="text-muted-foreground">Advanced analytics and automation help identify and nurture your best prospects.</p>
+                  <h3 className="font-mono-heading font-semibold mb-2">Increase Conversion Rates</h3>
+                  <p className="font-body text-muted-foreground">Advanced analytics and automation help identify and nurture your best prospects.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
@@ -283,8 +283,8 @@ const Index = () => {
                   <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">Save Time & Resources</h3>
-                  <p className="text-muted-foreground">Automated workflows and smart insights reduce manual work by up to 60%.</p>
+                  <h3 className="font-mono-heading font-semibold mb-2">Save Time & Resources</h3>
+                  <p className="font-body text-muted-foreground">Automated workflows and smart insights reduce manual work by up to 60%.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
@@ -292,8 +292,8 @@ const Index = () => {
                   <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">Scale Efficiently</h3>
-                  <p className="text-muted-foreground">Handle 10x more leads without increasing your team size.</p>
+                  <h3 className="font-mono-heading font-semibold mb-2">Scale Efficiently</h3>
+                  <p className="font-body text-muted-foreground">Handle 10x more leads without increasing your team size.</p>
                 </div>
               </div>
             </div>
@@ -302,7 +302,7 @@ const Index = () => {
             <Card className="p-8 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
               <div className="text-center space-y-4">
                 <TrendingUp className="h-16 w-16 text-primary mx-auto" />
-                <h3 className="text-2xl font-bold">Average Results</h3>
+                <h3 className="text-2xl font-mono-heading font-bold">Average Results</h3>
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
                     <div className="text-3xl font-bold text-primary">45%</div>
@@ -332,10 +332,10 @@ const Index = () => {
         <Card className="bg-gradient-to-r from-primary to-primary/80 border-0 text-primary-foreground overflow-hidden relative">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent"></div>
           <CardContent className="p-12 text-center relative z-10">
-            <h2 className="text-3xl font-bold mb-4">
+            <h2 className="text-3xl font-mono-heading font-bold mb-4">
               Ready to transform your customer management?
             </h2>
-            <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg font-body opacity-90 mb-8 max-w-2xl mx-auto">
               Join thousands of businesses using PRISM to streamline their sales process and boost revenue.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
