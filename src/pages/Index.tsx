@@ -356,7 +356,7 @@ const Index = () => {
               </span>
             </div>
             <p className="text-sm text-muted-foreground">
-              © 2024 PRISM CRM. All rights reserved.
+              © 2025 PRISM CRM. All rights reserved.
             </p>
           </div>
         </div>
