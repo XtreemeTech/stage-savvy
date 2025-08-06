@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Users, BarChart3, Mail, Shield, Zap, Sparkles } from 'lucide-react';
+import { ArrowRight, Users, BarChart3, Mail, Shield, Zap, Sparkles, Star, CheckCircle, TrendingUp } from 'lucide-react';
+import heroImage from '@/assets/hero-dashboard.jpg';
 
 const Index = () => {
   return (
@@ -29,31 +30,68 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 text-center">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <Badge variant="secondary" className="mb-4">
-            Customer Relationship Management
-          </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
-            Crystal Clear
-            <span className="block bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              Customer Management
-            </span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            PRISM refracts your customer data into actionable insights. 
-            Manage leads, track opportunities, and automate communications with precision.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/auth">
-              <Button size="lg" className="w-full sm:w-auto">
-                Start Your Free Trial
-                <ArrowRight className="ml-2 h-4 w-4" />
+      <section className="container mx-auto px-4 py-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8 text-center lg:text-left">
+            <Badge variant="secondary" className="mb-4 animate-fade-in">
+              <Star className="w-3 h-3 mr-1" />
+              Customer Relationship Management
+            </Badge>
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight animate-fade-in">
+              Crystal Clear
+              <span className="block bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+                Customer Management
+              </span>
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-2xl lg:mx-0 mx-auto leading-relaxed animate-fade-in">
+              PRISM refracts your customer data into actionable insights. 
+              Manage leads, track opportunities, and automate communications with precision.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in">
+              <Link to="/auth">
+                <Button size="lg" className="w-full sm:w-auto hover-scale">
+                  Start Your Free Trial
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Button variant="outline" size="lg" className="w-full sm:w-auto hover-scale">
+                Watch Demo
               </Button>
-            </Link>
-            <Button variant="outline" size="lg" className="w-full sm:w-auto">
-              Watch Demo
-            </Button>
+            </div>
+          </div>
+          <div className="animate-fade-in lg:order-last order-first">
+            <div className="relative">
+              <img 
+                src={heroImage} 
+                alt="PRISM CRM Dashboard" 
+                className="rounded-2xl shadow-2xl hover-scale"
+              />
+              <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold animate-pulse">
+                Live Demo
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="container mx-auto px-4 py-16 border-y border-muted/20 bg-muted/10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="space-y-2 animate-fade-in">
+            <div className="text-3xl font-bold text-primary">10K+</div>
+            <div className="text-sm text-muted-foreground">Active Users</div>
+          </div>
+          <div className="space-y-2 animate-fade-in">
+            <div className="text-3xl font-bold text-primary">98%</div>
+            <div className="text-sm text-muted-foreground">Satisfaction Rate</div>
+          </div>
+          <div className="space-y-2 animate-fade-in">
+            <div className="text-3xl font-bold text-primary">2.5M</div>
+            <div className="text-sm text-muted-foreground">Leads Managed</div>
+          </div>
+          <div className="space-y-2 animate-fade-in">
+            <div className="text-3xl font-bold text-primary">45%</div>
+            <div className="text-sm text-muted-foreground">Conversion Boost</div>
           </div>
         </div>
       </section>
@@ -70,72 +108,72 @@ const Index = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <Card className="border-muted/40 hover:border-primary/40 transition-colors">
+          <Card className="border-muted/40 hover:border-primary/40 transition-all duration-300 hover-scale hover:shadow-lg group">
             <CardHeader>
-              <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <Users className="h-6 w-6 text-primary" />
+              <div className="h-12 w-12 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
+                <Users className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <CardTitle>Pipeline Management</CardTitle>
+              <CardTitle className="group-hover:text-primary transition-colors duration-300">Pipeline Management</CardTitle>
               <CardDescription>
                 Visual Kanban board with drag-and-drop functionality to track leads through your sales pipeline.
               </CardDescription>
             </CardHeader>
           </Card>
 
-          <Card className="border-muted/40 hover:border-primary/40 transition-colors">
+          <Card className="border-muted/40 hover:border-primary/40 transition-all duration-300 hover-scale hover:shadow-lg group">
             <CardHeader>
-              <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <BarChart3 className="h-6 w-6 text-primary" />
+              <div className="h-12 w-12 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
+                <BarChart3 className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <CardTitle>Analytics Dashboard</CardTitle>
+              <CardTitle className="group-hover:text-primary transition-colors duration-300">Analytics Dashboard</CardTitle>
               <CardDescription>
                 Real-time insights into conversion rates, pipeline health, and revenue forecasting.
               </CardDescription>
             </CardHeader>
           </Card>
 
-          <Card className="border-muted/40 hover:border-primary/40 transition-colors">
+          <Card className="border-muted/40 hover:border-primary/40 transition-all duration-300 hover-scale hover:shadow-lg group">
             <CardHeader>
-              <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <Mail className="h-6 w-6 text-primary" />
+              <div className="h-12 w-12 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
+                <Mail className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <CardTitle>Email Automation</CardTitle>
+              <CardTitle className="group-hover:text-primary transition-colors duration-300">Email Automation</CardTitle>
               <CardDescription>
                 Automated email sequences triggered by pipeline stage changes to nurture leads effectively.
               </CardDescription>
             </CardHeader>
           </Card>
 
-          <Card className="border-muted/40 hover:border-primary/40 transition-colors">
+          <Card className="border-muted/40 hover:border-primary/40 transition-all duration-300 hover-scale hover:shadow-lg group">
             <CardHeader>
-              <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <Shield className="h-6 w-6 text-primary" />
+              <div className="h-12 w-12 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
+                <Shield className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <CardTitle>Secure & Private</CardTitle>
+              <CardTitle className="group-hover:text-primary transition-colors duration-300">Secure & Private</CardTitle>
               <CardDescription>
                 Enterprise-grade security with row-level security policies to protect your customer data.
               </CardDescription>
             </CardHeader>
           </Card>
 
-          <Card className="border-muted/40 hover:border-primary/40 transition-colors">
+          <Card className="border-muted/40 hover:border-primary/40 transition-all duration-300 hover-scale hover:shadow-lg group">
             <CardHeader>
-              <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <Zap className="h-6 w-6 text-primary" />
+              <div className="h-12 w-12 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
+                <Zap className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <CardTitle>Lightning Fast</CardTitle>
+              <CardTitle className="group-hover:text-primary transition-colors duration-300">Lightning Fast</CardTitle>
               <CardDescription>
                 Built with modern technology stack for instant page loads and real-time updates.
               </CardDescription>
             </CardHeader>
           </Card>
 
-          <Card className="border-muted/40 hover:border-primary/40 transition-colors">
+          <Card className="border-muted/40 hover:border-primary/40 transition-all duration-300 hover-scale hover:shadow-lg group">
             <CardHeader>
-              <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <Sparkles className="h-6 w-6 text-primary" />
+              <div className="h-12 w-12 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
+                <Sparkles className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <CardTitle>Smart Insights</CardTitle>
+              <CardTitle className="group-hover:text-primary transition-colors duration-300">Smart Insights</CardTitle>
               <CardDescription>
                 AI-powered analytics to identify patterns and opportunities in your customer data.
               </CardDescription>
@@ -144,22 +182,169 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="container mx-auto px-4 py-20 bg-muted/10">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold mb-4">Trusted by thousands of businesses</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            See what our customers say about their experience with PRISM CRM.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card className="hover-scale transition-all duration-300">
+            <CardContent className="p-6">
+              <div className="flex items-center mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />
+                ))}
+              </div>
+              <p className="text-muted-foreground mb-4">
+                "PRISM transformed our sales process completely. We've seen a 40% increase in conversions since switching."
+              </p>
+              <div className="flex items-center">
+                <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-3">
+                  <span className="text-sm font-semibold text-primary">JS</span>
+                </div>
+                <div>
+                  <div className="font-semibold">John Smith</div>
+                  <div className="text-sm text-muted-foreground">CEO, TechCorp</div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="hover-scale transition-all duration-300">
+            <CardContent className="p-6">
+              <div className="flex items-center mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />
+                ))}
+              </div>
+              <p className="text-muted-foreground mb-4">
+                "The automation features save us hours every week. The interface is intuitive and powerful."
+              </p>
+              <div className="flex items-center">
+                <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-3">
+                  <span className="text-sm font-semibold text-primary">MJ</span>
+                </div>
+                <div>
+                  <div className="font-semibold">Maria Johnson</div>
+                  <div className="text-sm text-muted-foreground">Sales Director, GrowthCo</div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="hover-scale transition-all duration-300">
+            <CardContent className="p-6">
+              <div className="flex items-center mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />
+                ))}
+              </div>
+              <p className="text-muted-foreground mb-4">
+                "Best CRM we've ever used. The analytics help us make data-driven decisions every day."
+              </p>
+              <div className="flex items-center">
+                <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-3">
+                  <span className="text-sm font-semibold text-primary">DB</span>
+                </div>
+                <div>
+                  <div className="font-semibold">David Brown</div>
+                  <div className="text-sm text-muted-foreground">VP Sales, InnovateLtd</div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="container mx-auto px-4 py-20">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-6">Why businesses choose PRISM</h2>
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="h-8 w-8 rounded-full bg-green-100 dark:bg-green-900/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">Increase Conversion Rates</h3>
+                  <p className="text-muted-foreground">Advanced analytics and automation help identify and nurture your best prospects.</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="h-8 w-8 rounded-full bg-green-100 dark:bg-green-900/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">Save Time & Resources</h3>
+                  <p className="text-muted-foreground">Automated workflows and smart insights reduce manual work by up to 60%.</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="h-8 w-8 rounded-full bg-green-100 dark:bg-green-900/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">Scale Efficiently</h3>
+                  <p className="text-muted-foreground">Handle 10x more leads without increasing your team size.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="relative">
+            <Card className="p-8 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
+              <div className="text-center space-y-4">
+                <TrendingUp className="h-16 w-16 text-primary mx-auto" />
+                <h3 className="text-2xl font-bold">Average Results</h3>
+                <div className="grid grid-cols-2 gap-4 text-center">
+                  <div>
+                    <div className="text-3xl font-bold text-primary">45%</div>
+                    <div className="text-sm text-muted-foreground">More Conversions</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-primary">60%</div>
+                    <div className="text-sm text-muted-foreground">Time Saved</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-primary">10x</div>
+                    <div className="text-sm text-muted-foreground">Lead Capacity</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-primary">98%</div>
+                    <div className="text-sm text-muted-foreground">Satisfaction</div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="container mx-auto px-4 py-20">
-        <Card className="bg-gradient-to-r from-primary to-primary/80 border-0 text-primary-foreground">
-          <CardContent className="p-12 text-center">
+        <Card className="bg-gradient-to-r from-primary to-primary/80 border-0 text-primary-foreground overflow-hidden relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent"></div>
+          <CardContent className="p-12 text-center relative z-10">
             <h2 className="text-3xl font-bold mb-4">
               Ready to transform your customer management?
             </h2>
             <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
               Join thousands of businesses using PRISM to streamline their sales process and boost revenue.
             </p>
-            <Link to="/auth">
-              <Button size="lg" variant="secondary" className="bg-background text-foreground hover:bg-background/90">
-                Start Your Free Trial
-                <ArrowRight className="ml-2 h-4 w-4" />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/auth">
+                <Button size="lg" variant="secondary" className="bg-background text-foreground hover:bg-background/90 hover-scale">
+                  Start Your Free Trial
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                Schedule Demo
               </Button>
-            </Link>
+            </div>
           </CardContent>
         </Card>
       </section>
