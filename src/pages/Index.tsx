@@ -60,11 +60,11 @@ const Index = () => {
               </linearGradient>
             </defs>
             <path
-              d="M 0 150 Q 400 250 800 350 Q 1000 400 1200 500"
+              d="M 0 150 Q 300 350 600 450 Q 900 350 1200 150"
               stroke="url(#curvedLineGradient)"
               strokeWidth="80"
               fill="none"
-              className="blur-2xl opacity-40"
+              className="blur-lg opacity-40"
             />
           </svg>
         </div>
