@@ -27,48 +27,74 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Set up auth state listener FIRST
+    let mounted = true;
+
+    // Check for existing session first
+    const getInitialSession = async () => {
+      try {
+        const { data: { session }, error } = await supabase.auth.getSession();
+        if (error) {
+          console.error('Error getting session:', error);
+        }
+        
+        if (mounted) {
+          setSession(session);
+          setUser(session?.user ?? null);
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error('Error in getInitialSession:', error);
+        if (mounted) {
+          setLoading(false);
+        }
+      }
+    };
+
+    // Set up auth state listener
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
-        setSession(session);
-        setUser(session?.user ?? null);
-        setLoading(false);
+        if (mounted) {
+          setSession(session);
+          setUser(session?.user ?? null);
 
-        // Create profile when user first signs up and is confirmed
-        if (event === 'SIGNED_IN' && session?.user) {
-          // Check if profile already exists
-          const { data: existingProfile } = await supabase
-            .from('profiles')
-            .select('id')
-            .eq('user_id', session.user.id)
-            .maybeSingle();
+          // Create profile when user first signs up and is confirmed
+          if (event === 'SIGNED_IN' && session?.user) {
+            try {
+              // Check if profile already exists
+              const { data: existingProfile } = await supabase
+                .from('profiles')
+                .select('id')
+                .eq('user_id', session.user.id)
+                .maybeSingle();
 
-          // Only create profile if it doesn't exist
-          if (!existingProfile) {
-            const fullName = session.user.user_metadata?.full_name || 'User';
-            const { error: profileError } = await supabase
-              .from('profiles')
-              .insert({
-                user_id: session.user.id,
-                full_name: fullName,
-              });
-            
-            if (profileError) {
-              console.error('Error creating profile:', profileError);
+              // Only create profile if it doesn't exist
+              if (!existingProfile) {
+                const fullName = session.user.user_metadata?.full_name || 'User';
+                const { error: profileError } = await supabase
+                  .from('profiles')
+                  .insert({
+                    user_id: session.user.id,
+                    full_name: fullName,
+                  });
+                
+                if (profileError) {
+                  console.error('Error creating profile:', profileError);
+                }
+              }
+            } catch (error) {
+              console.error('Error handling SIGNED_IN event:', error);
             }
           }
         }
       }
     );
 
-    // THEN check for existing session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setUser(session?.user ?? null);
-      setLoading(false);
-    });
+    getInitialSession();
 
-    return () => subscription.unsubscribe();
+    return () => {
+      mounted = false;
+      subscription.unsubscribe();
+    };
   }, []);
 
   const signUp = async (email: string, password: string, fullName: string) => {
