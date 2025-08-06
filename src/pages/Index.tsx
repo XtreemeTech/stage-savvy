@@ -85,7 +85,7 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="container mx-auto px-4 py-16 border-y border-muted/20 bg-slate-100">
+      <section className="container mx-auto px-4 py-16 border-y border-muted/20 bg-slate-100 rounded">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div className="space-y-2 animate-fade-in" ref={activeUsers.ref}>
             <div className="text-3xl font-numbers font-bold text-primary">{activeUsers.displayValue}</div>
