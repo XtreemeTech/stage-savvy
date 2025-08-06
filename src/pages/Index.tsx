@@ -5,10 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Users, BarChart3, Mail, Shield, Zap, Sparkles, Star, CheckCircle, TrendingUp } from 'lucide-react';
 import heroImage from '@/assets/hero-dashboard.jpg';
-
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+  return <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
       {/* Header */}
       <header className="border-b border-muted/40 bg-background/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -61,12 +59,8 @@ const Index = () => {
           </div>
           <div className="animate-fade-in lg:order-last order-first">
             <div className="relative">
-              <img 
-                src={heroImage} 
-                alt="PRISM CRM Dashboard" 
-                className="rounded-2xl shadow-2xl hover-scale"
-              />
-              <div className="absolute -top-4 -right-4 bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold animate-pulse shadow-lg">
+              <img src={heroImage} alt="PRISM CRM Dashboard" className="rounded-2xl shadow-2xl hover-scale" />
+              <div className="absolute -top-4 -right-4 text-white px-4 py-2 text-sm font-semibold animate-pulse shadow-lg bg-sky-600 rounded-md">
                 Live Demo
               </div>
             </div>
@@ -194,9 +188,7 @@ const Index = () => {
           <Card className="hover-scale transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />
-                ))}
+                {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />)}
               </div>
               <p className="text-muted-foreground mb-4">
                 "PRISM transformed our sales process completely. We've seen a 40% increase in conversions since switching."
@@ -216,9 +208,7 @@ const Index = () => {
           <Card className="hover-scale transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />
-                ))}
+                {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />)}
               </div>
               <p className="text-muted-foreground mb-4">
                 "The automation features save us hours every week. The interface is intuitive and powerful."
@@ -238,9 +228,7 @@ const Index = () => {
           <Card className="hover-scale transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />
-                ))}
+                {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />)}
               </div>
               <p className="text-muted-foreground mb-4">
                 "Best CRM we've ever used. The analytics help us make data-driven decisions every day."
@@ -367,8 +355,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
