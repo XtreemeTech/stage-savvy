@@ -44,8 +44,15 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="relative container mx-auto px-4 py-20 overflow-hidden">
+        {/* Abstract Blurred Background Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-orange-400/20 to-red-500/20 rounded-full blur-3xl transform -rotate-12"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-primary/15 to-violet-500/15 rounded-full blur-3xl transform rotate-45"></div>
+          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-full blur-2xl transform -translate-x-1/2 -translate-y-1/2"></div>
+        </div>
+        
+        <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 text-center lg:text-left">
             <Badge variant="secondary" className="mb-4 animate-fade-in">
               <Star className="w-3 h-3 mr-1" />
@@ -75,8 +82,12 @@ const Index = () => {
           </div>
           <div className="animate-fade-in lg:order-last order-first">
             <div className="relative">
-              <img src={heroImage} alt="PRISM CRM Dashboard" className="rounded-2xl shadow-2xl hover-scale" />
-              <div className="absolute -top-4 -right-4 text-white px-4 py-2 text-sm font-semibold animate-pulse shadow-lg bg-sky-600 rounded-md">
+              <img 
+                src="/lovable-uploads/bd248a19-1a82-4537-b025-98996ea58a36.png" 
+                alt="Atlas Robot - Where Code Meets Motion" 
+                className="rounded-2xl shadow-2xl hover-scale w-full object-contain max-h-[600px]" 
+              />
+              <div className="absolute -top-4 -right-4 text-white px-4 py-2 text-sm font-semibold animate-pulse shadow-lg bg-orange-500 rounded-md">
                 Live Demo
               </div>
             </div>
