@@ -7,11 +7,21 @@ import { ArrowRight, Users, BarChart3, Mail, Shield, Zap, Sparkles, Star, CheckC
 import heroImage from '@/assets/hero-dashboard.jpg';
 import { useCounterAnimation } from '@/hooks/useCounterAnimation';
 const Index = () => {
-  const activeUsers = useCounterAnimation({ end: 10000, suffix: '+' });
-  const satisfactionRate = useCounterAnimation({ end: 98, suffix: '%' });
-  const leadsManaged = useCounterAnimation({ end: 2500000 });
-  const conversionBoost = useCounterAnimation({ end: 45, suffix: '%' });
-
+  const activeUsers = useCounterAnimation({
+    end: 10000,
+    suffix: '+'
+  });
+  const satisfactionRate = useCounterAnimation({
+    end: 98,
+    suffix: '%'
+  });
+  const leadsManaged = useCounterAnimation({
+    end: 2500000
+  });
+  const conversionBoost = useCounterAnimation({
+    end: 45,
+    suffix: '%'
+  });
   return <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
       {/* Header */}
       <header className="border-b border-muted/40 bg-background/80 backdrop-blur-sm sticky top-0 z-50">
@@ -335,7 +345,7 @@ const Index = () => {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="border-white/20 text-white bg-slate-600 hover:bg-slate-500">
                 Schedule Demo
               </Button>
             </div>
