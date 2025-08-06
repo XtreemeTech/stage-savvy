@@ -44,7 +44,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative px-4 py-20 overflow-hidden">
-        {/* Curved gradient line background - full width, flowing diagonally */}
+        {/* Gradient circle background */}
         <div className="absolute inset-0 pointer-events-none">
           <svg 
             className="absolute inset-0 w-full h-full" 
@@ -53,18 +53,17 @@ const Index = () => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <defs>
-              <linearGradient id="curvedLineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <radialGradient id="circleGradient" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stopColor="#22c55e" stopOpacity="0.8" />
                 <stop offset="50%" stopColor="#84cc16" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="#f97316" stopOpacity="0.8" />
-              </linearGradient>
+                <stop offset="100%" stopColor="#f97316" stopOpacity="0.3" />
+              </radialGradient>
             </defs>
-            <path
-              d="M 0 150 C 200 150 400 400 600 450 C 800 400 1000 150 1200 150"
-              stroke="url(#curvedLineGradient)"
-              strokeWidth="80"
-              fill="none"
-              strokeLinecap="round"
+            <circle
+              cx="600"
+              cy="300"
+              r="200"
+              fill="url(#circleGradient)"
               className="blur-lg opacity-40"
             />
           </svg>
