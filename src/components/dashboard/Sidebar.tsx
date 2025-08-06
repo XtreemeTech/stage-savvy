@@ -21,7 +21,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentView, onViewChange }) =
   const { user, signOut } = useAuth();
 
   const handleSignOut = async () => {
-    await signOut();
+    try {
+      await signOut();
+      // Redirect to home page after sign out
+      window.location.href = '/';
+    } catch (error) {
+      console.error('Error signing out:', error);
+    }
   };
 
   const menuItems = [

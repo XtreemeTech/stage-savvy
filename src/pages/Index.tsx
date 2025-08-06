@@ -44,33 +44,12 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative px-4 py-20 overflow-hidden">
-        {/* Gradient circle background */}
-        <div className="absolute inset-0 pointer-events-none">
-          <svg 
-            className="absolute inset-0 w-full h-full" 
-            viewBox="0 0 1200 600" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs>
-              <radialGradient id="circleGradient" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#22c55e" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#84cc16" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="#f97316" stopOpacity="0.3" />
-              </radialGradient>
-            </defs>
-            <circle
-              cx="600"
-              cy="300"
-              r="200"
-              fill="url(#circleGradient)"
-              className="blur-lg opacity-40"
-            />
-          </svg>
-        </div>
-        
         <div className="relative grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8 text-center lg:text-left">
+          <div className="relative space-y-8 text-center lg:text-left">
+            {/* Light green circle positioned behind hero text */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+              <div className="w-96 h-96 rounded-full bg-green-300/20 blur-2xl opacity-50"></div>
+            </div>
             
             <h1 className="text-5xl md:text-6xl font-body font-bold tracking-tight animate-fade-in">
               Crystal Clear
