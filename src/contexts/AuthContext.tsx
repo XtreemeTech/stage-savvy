@@ -62,6 +62,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         if (mounted) {
           setSession(session);
           setUser(session?.user ?? null);
+          setLoading(false); // Fix: Always set loading to false when auth state changes
 
           // Create profile when user first signs up and is confirmed
           if (event === 'SIGNED_IN' && session?.user) {

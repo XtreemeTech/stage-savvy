@@ -46,9 +46,9 @@ const Index = () => {
       <section className="relative px-4 py-20 overflow-hidden">
         <div className="relative grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative space-y-8 text-center lg:text-left">
-            {/* Light green circle positioned behind hero text */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-              <div className="w-96 h-96 rounded-full bg-green-300/20 blur-2xl opacity-50"></div>
+            {/* Curved gradient line from mid-top-left to mid-top-right */}
+            <div className="absolute top-1/4 left-0 right-0 pointer-events-none">
+              <div className="h-32 w-full bg-gradient-to-r from-green-400 to-orange-500 blur-2xl opacity-40 rounded-full transform -rotate-12 scale-150"></div>
             </div>
             
             <h1 className="text-5xl md:text-6xl font-body font-bold tracking-tight animate-fade-in">
