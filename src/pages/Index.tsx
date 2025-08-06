@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Users, BarChart3, Mail, Shield, Zap, Sparkles, Star, CheckCircle, TrendingUp } from 'lucide-react';
 import heroImage from '@/assets/hero-crystal.png';
 import { useCounterAnimation } from '@/hooks/useCounterAnimation';
+import { PrismLogo } from '@/components/PrismLogo';
 const Index = () => {
   const activeUsers = useCounterAnimation({
     end: 10000,
@@ -25,11 +26,9 @@ const Index = () => {
   return <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
       {/* Header */}
       <header className="border-b border-muted/40 bg-background/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded-lg bg-gradient-to-r from-primary to-primary/60 flex items-center justify-center">
-              <Sparkles className="h-4 w-4 text-primary-foreground" />
-            </div>
+            <PrismLogo size={32} />
             <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
               PRISM
             </span>
@@ -44,7 +43,7 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative container mx-auto px-4 py-20 overflow-hidden">
+      <section className="relative px-4 py-20 overflow-hidden">
         {/* Abstract Background Elements */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large copper gradient circle - top right */}
@@ -102,7 +101,7 @@ const Index = () => {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto hover-scale bg-orange-600 hover:bg-orange-500">
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto hover-scale !bg-orange-600 hover:!bg-orange-500 text-white">
                 Watch Demo
               </Button>
             </div>
@@ -119,7 +118,7 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="container mx-auto px-4 py-16 border-y border-muted/20 bg-slate-100 rounded">
+      <section className="px-4 py-16 border-y border-muted/20 bg-slate-100 rounded">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div className="space-y-2 animate-fade-in" ref={activeUsers.ref}>
             <div className="text-3xl font-numbers font-bold text-primary">{activeUsers.displayValue}</div>
@@ -141,7 +140,7 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="container mx-auto px-4 py-20">
+      <section className="px-4 py-20">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-mono-heading font-bold mb-4">
             Everything you need to manage customers
@@ -227,7 +226,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="container mx-auto px-4 py-20 bg-muted/10">
+      <section className="px-4 py-20 bg-muted/10">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-mono-heading font-bold mb-4">Trusted by thousands of businesses</h2>
           <p className="text-lg font-body text-muted-foreground max-w-2xl mx-auto">
@@ -298,7 +297,7 @@ const Index = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="container mx-auto px-4 py-20">
+      <section className="px-4 py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-3xl font-mono-heading font-bold mb-6">Why businesses choose PRISM</h2>
@@ -362,7 +361,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="container mx-auto px-4 py-20">
+      <section className="px-4 py-20">
         <Card className="bg-gradient-to-r from-primary to-primary/80 border-0 text-primary-foreground overflow-hidden relative">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent"></div>
           <CardContent className="p-12 text-center relative z-10">
@@ -379,7 +378,7 @@ const Index = () => {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="border-white/20 text-white bg-orange-600 hover:bg-orange-500">
+              <Button size="lg" variant="outline" className="border-white/20 text-white !bg-orange-600 hover:!bg-orange-500">
                 Schedule Demo
               </Button>
             </div>
@@ -389,12 +388,10 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="border-t border-muted/40 bg-muted/20">
-        <div className="container mx-auto px-4 py-8">
+        <div className="px-4 py-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <div className="h-6 w-6 rounded bg-gradient-to-r from-primary to-primary/60 flex items-center justify-center">
-                <Sparkles className="h-3 w-3 text-primary-foreground" />
-              </div>
+              <PrismLogo size={24} />
               <span className="font-semibold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                 PRISM
               </span>
