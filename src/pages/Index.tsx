@@ -109,7 +109,7 @@ const Index = () => {
           <div className="animate-fade-in lg:order-last order-first">
             <div className="relative">
               <img src={heroImage} alt="PRISM Crystal" className="rounded-2xl shadow-2xl hover-scale w-full h-auto max-w-lg mx-auto" />
-              <div className="absolute -top-4 -right-4 text-white px-4 py-2 text-sm font-semibold animate-pulse shadow-lg bg-gradient-to-r from-primary to-secondary rounded-md bg-inherit">
+              <div className="absolute -top-4 -right-4 text-white px-4 py-2 text-sm font-semibold animate-pulse shadow-lg orange-600 rounded-md bg-inherit">
                 Live Demo
               </div>
             </div>
