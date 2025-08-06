@@ -53,7 +53,7 @@ const Index = () => {
             </Badge>
             <h1 className="text-5xl md:text-6xl font-body font-bold tracking-tight animate-fade-in">
               Crystal Clear
-              <span className="block bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent mx-0 my-0 py-[15px]">
                 Customer Management
               </span>
             </h1>
