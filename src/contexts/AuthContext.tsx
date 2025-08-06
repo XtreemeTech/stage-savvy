@@ -71,6 +71,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       
       if (profileError) {
         console.error('Error creating profile:', profileError);
+        // Return a user-friendly error for profile creation failure
+        return { 
+          error: { 
+            message: 'Account created but profile setup failed. Please contact support.',
+            code: 'profile_creation_failed'
+          } 
+        };
       }
     }
 

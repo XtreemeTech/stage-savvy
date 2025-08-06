@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
+import { signUpSchema, signInSchema, sanitizeInput } from '@/lib/validation';
+import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -28,19 +30,52 @@ const Auth = () => {
     e.preventDefault();
     setLoading(true);
     
-    const { error } = await signIn(email, password);
-    
-    if (error) {
-      toast({
-        title: "Sign in failed",
-        description: error.message,
-        variant: "destructive",
-      });
-    } else {
-      toast({
-        title: "Welcome back!",
-        description: "You have been signed in successfully.",
-      });
+    try {
+      // Validate and sanitize input
+      const sanitizedData = {
+        email: email.toLowerCase().trim(),
+        password: password
+      };
+
+      const validatedData = signInSchema.parse(sanitizedData);
+      
+      const { error } = await signIn(validatedData.email, validatedData.password);
+      
+      if (error) {
+        if (error.message?.includes('Invalid login credentials')) {
+          toast({
+            title: "Sign in failed",
+            description: "Invalid email or password. Please try again.",
+            variant: "destructive",
+          });
+        } else {
+          toast({
+            title: "Sign in failed",
+            description: error.message || 'Failed to sign in',
+            variant: "destructive",
+          });
+        }
+      } else {
+        toast({
+          title: "Welcome back!",
+          description: "You have been signed in successfully.",
+        });
+      }
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const firstError = error.errors[0];
+        toast({
+          title: "Validation Error",
+          description: firstError.message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Sign in failed",
+          description: "An error occurred during signin",
+          variant: "destructive",
+        });
+      }
     }
     setLoading(false);
   };
@@ -49,19 +84,59 @@ const Auth = () => {
     e.preventDefault();
     setLoading(true);
     
-    const { error } = await signUp(email, password, fullName);
-    
-    if (error) {
-      toast({
-        title: "Sign up failed",
-        description: error.message,
-        variant: "destructive",
-      });
-    } else {
-      toast({
-        title: "Account created!",
-        description: "Welcome to PRISM CRM. You can now sign in.",
-      });
+    try {
+      // Validate and sanitize input
+      const sanitizedData = {
+        email: email.toLowerCase().trim(),
+        password: password,
+        fullName: sanitizeInput(fullName)
+      };
+
+      const validatedData = signUpSchema.parse(sanitizedData);
+      
+      const { error } = await signUp(validatedData.email, validatedData.password, validatedData.fullName);
+      
+      if (error) {
+        if (error.message?.includes('already registered') || error.code === 'user_already_exists') {
+          toast({
+            title: "Sign up failed",
+            description: "This email is already registered. Please sign in instead.",
+            variant: "destructive",
+          });
+        } else if (error.code === 'profile_creation_failed') {
+          toast({
+            title: "Account creation issue",
+            description: error.message,
+            variant: "destructive",
+          });
+        } else {
+          toast({
+            title: "Sign up failed",
+            description: error.message || 'Failed to create account',
+            variant: "destructive",
+          });
+        }
+      } else {
+        toast({
+          title: "Account created!",
+          description: "Welcome to PRISM CRM. Please check your email to verify your account.",
+        });
+      }
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const firstError = error.errors[0];
+        toast({
+          title: "Validation Error",
+          description: firstError.message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Sign up failed",
+          description: "An error occurred during signup",
+          variant: "destructive",
+        });
+      }
     }
     setLoading(false);
   };

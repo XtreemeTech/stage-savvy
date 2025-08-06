@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/contexts/AuthContext';
+import { customerSchema, sanitizeInput } from '@/lib/validation';
+import { z } from 'zod';
 import {
   Dialog,
   DialogContent,
@@ -89,18 +91,32 @@ export const CustomerModal: React.FC<CustomerModalProps> = ({
 
     setLoading(true);
     
-    const customerData = {
-      name: formData.name.trim(),
-      email: formData.email.trim(),
-      phone: formData.phone.trim() || null,
-      company: formData.company.trim() || null,
-      pipeline_stage: formData.pipeline_stage,
-      opportunity_value: formData.opportunity_value ? parseFloat(formData.opportunity_value) : null,
-      notes: formData.notes.trim() || null,
-      created_by: user.id,
-    };
-
     try {
+      // Validate and sanitize input data
+      const sanitizedData = {
+        name: sanitizeInput(formData.name),
+        email: formData.email.toLowerCase().trim(),
+        phone: formData.phone ? sanitizeInput(formData.phone) : undefined,
+        company: formData.company ? sanitizeInput(formData.company) : undefined,
+        pipeline_stage: formData.pipeline_stage,
+        opportunity_value: formData.opportunity_value ? parseFloat(formData.opportunity_value) : 0,
+        notes: formData.notes ? sanitizeInput(formData.notes) : undefined,
+      };
+
+      // Validate with Zod schema
+      const validatedData = customerSchema.parse(sanitizedData);
+
+      const customerData = {
+        name: validatedData.name,
+        email: validatedData.email,
+        phone: validatedData.phone || null,
+        company: validatedData.company || null,
+        pipeline_stage: validatedData.pipeline_stage,
+        opportunity_value: validatedData.opportunity_value || null,
+        notes: validatedData.notes || null,
+        created_by: user.id,
+      };
+
       if (customer) {
         // Update existing customer
         const { error } = await supabase
@@ -130,12 +146,21 @@ export const CustomerModal: React.FC<CustomerModalProps> = ({
 
       onClose();
     } catch (error) {
-      console.error('Error saving customer:', error);
-      toast({
-        title: "Error",
-        description: "Failed to save customer information",
-        variant: "destructive",
-      });
+      if (error instanceof z.ZodError) {
+        const firstError = error.errors[0];
+        toast({
+          title: "Validation Error",
+          description: firstError.message,
+          variant: "destructive",
+        });
+      } else {
+        console.error('Error saving customer:', error);
+        toast({
+          title: "Error",
+          description: "Failed to save customer information",
+          variant: "destructive",
+        });
+      }
     } finally {
       setLoading(false);
     }
