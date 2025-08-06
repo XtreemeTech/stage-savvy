@@ -33,6 +33,31 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setSession(session);
         setUser(session?.user ?? null);
         setLoading(false);
+
+        // Create profile when user first signs up and is confirmed
+        if (event === 'SIGNED_IN' && session?.user) {
+          // Check if profile already exists
+          const { data: existingProfile } = await supabase
+            .from('profiles')
+            .select('id')
+            .eq('user_id', session.user.id)
+            .maybeSingle();
+
+          // Only create profile if it doesn't exist
+          if (!existingProfile) {
+            const fullName = session.user.user_metadata?.full_name || 'User';
+            const { error: profileError } = await supabase
+              .from('profiles')
+              .insert({
+                user_id: session.user.id,
+                full_name: fullName,
+              });
+            
+            if (profileError) {
+              console.error('Error creating profile:', profileError);
+            }
+          }
+        }
       }
     );
 
@@ -60,27 +85,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       },
     });
 
-    if (!error && data.user) {
-      // Create profile after successful signup
-      const { error: profileError } = await supabase
-        .from('profiles')
-        .insert({
-          user_id: data.user.id,
-          full_name: fullName,
-        });
-      
-      if (profileError) {
-        console.error('Error creating profile:', profileError);
-        // Return a user-friendly error for profile creation failure
-        return { 
-          error: { 
-            message: 'Account created but profile setup failed. Please contact support.',
-            code: 'profile_creation_failed'
-          } 
-        };
-      }
-    }
-
+    // Don't create profile here - it will be created in onAuthStateChange
+    // when the user is fully authenticated
     return { error };
   };
 
