@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Users, BarChart3, Mail, Shield, Zap, Sparkles, Star, CheckCircle, TrendingUp } from 'lucide-react';
-import heroImage from '@/assets/hero-dashboard.jpg';
+import heroImage from '@/assets/hero-crystal.png';
 import { useCounterAnimation } from '@/hooks/useCounterAnimation';
 const Index = () => {
   const activeUsers = useCounterAnimation({
@@ -44,8 +44,25 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="relative container mx-auto px-4 py-20 overflow-hidden">
+        {/* Abstract Background Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Large forest green gradient circle - top right */}
+          <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-br from-primary/20 to-secondary/15 rounded-full blur-3xl opacity-60 animate-pulse"></div>
+          
+          {/* Medium sage green ellipse - bottom left */}
+          <div className="absolute -bottom-24 -left-24 w-80 h-64 bg-gradient-to-tr from-secondary/25 to-accent/20 rounded-full blur-2xl opacity-50"></div>
+          
+          {/* Small accent bubbles */}
+          <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-gradient-to-r from-accent/30 to-primary/20 rounded-full blur-xl opacity-40"></div>
+          <div className="absolute bottom-1/3 left-1/3 w-24 h-24 bg-gradient-to-l from-primary/25 to-secondary/20 rounded-full blur-lg opacity-35"></div>
+          
+          {/* Organic blob shapes */}
+          <div className="absolute top-1/2 left-1/4 w-48 h-36 bg-gradient-to-br from-accent/15 to-primary/10 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] blur-2xl opacity-30 transform rotate-12"></div>
+          <div className="absolute top-1/6 right-1/6 w-36 h-48 bg-gradient-to-tl from-secondary/20 to-accent/15 rounded-[40%_60%_70%_30%/40%_70%_30%_60%] blur-xl opacity-25 transform -rotate-12"></div>
+        </div>
+        
+        <div className="relative grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 text-center lg:text-left">
             
             <h1 className="text-5xl md:text-6xl font-body font-bold tracking-tight animate-fade-in">
@@ -72,8 +89,8 @@ const Index = () => {
           </div>
           <div className="animate-fade-in lg:order-last order-first">
             <div className="relative">
-              <img src={heroImage} alt="PRISM CRM Dashboard" className="rounded-2xl shadow-2xl hover-scale" />
-              <div className="absolute -top-4 -right-4 text-white px-4 py-2 text-sm font-semibold animate-pulse shadow-lg bg-sky-600 rounded-md">
+              <img src={heroImage} alt="PRISM Crystal" className="rounded-2xl shadow-2xl hover-scale w-full h-auto max-w-lg mx-auto" />
+              <div className="absolute -top-4 -right-4 text-white px-4 py-2 text-sm font-semibold animate-pulse shadow-lg bg-gradient-to-r from-primary to-secondary rounded-md">
                 Live Demo
               </div>
             </div>
