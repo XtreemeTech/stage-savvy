@@ -67,6 +67,11 @@ const Index = () => {
               strokeLinecap="round"
               className="blur-lg opacity-40"
             />
+            
+            {/* Center Prism */}
+            <g transform="translate(600, 300)">
+              <PrismLogo size={72} className="drop-shadow-2xl opacity-80" />
+            </g>
           </svg>
         </div>
         
