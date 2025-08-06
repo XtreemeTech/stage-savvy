@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Users, BarChart3, Mail, Shield, Zap, Sparkles, Star, CheckCircle, TrendingUp } from 'lucide-react';
-import heroImage from '@/assets/hero-crystal.png';
+import heroImage from '@/assets/hero-revenue.jpg';
 import { useCounterAnimation } from '@/hooks/useCounterAnimation';
 import { PrismLogo } from '@/components/PrismLogo';
 const Index = () => {
@@ -44,41 +44,29 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative px-4 py-20 overflow-hidden">
-        {/* Abstract Background Elements */}
+        {/* Curved gradient line background */}
         <div className="absolute inset-0 pointer-events-none">
-          {/* Large copper gradient circle - top right */}
-          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full blur-3xl opacity-50 animate-pulse" style={{
-          background: 'var(--gradient-copper)'
-        }}></div>
-          
-          {/* Medium teal ellipse - bottom left */}
-          <div className="absolute -bottom-32 -left-32 w-96 h-72 rounded-full blur-2xl opacity-45" style={{
-          background: 'var(--gradient-teal)'
-        }}></div>
-          
-          {/* Large forest accent - center left */}
-          <div className="absolute top-1/3 -left-20 w-80 h-80 rounded-full blur-3xl opacity-40" style={{
-          background: 'var(--gradient-forest)'
-        }}></div>
-          
-          {/* Amber accent bubbles */}
-          <div className="absolute top-1/4 right-1/3 w-40 h-40 rounded-full blur-xl opacity-45" style={{
-          background: 'var(--gradient-amber)'
-        }}></div>
-          <div className="absolute bottom-1/4 left-1/2 w-32 h-32 rounded-full blur-lg opacity-40" style={{
-          background: 'var(--gradient-amber)'
-        }}></div>
-          
-          {/* Organic blob shapes with color wheel harmony */}
-          <div className="absolute top-1/2 left-1/4 w-60 h-44 blur-2xl opacity-35 transform rotate-12 rounded-[60%_40%_30%_70%/60%_30%_70%_40%]" style={{
-          background: 'var(--gradient-teal)'
-        }}></div>
-          <div className="absolute top-1/6 right-1/6 w-44 h-56 blur-xl opacity-30 transform -rotate-12 rounded-[40%_60%_70%_30%/40%_70%_30%_60%]" style={{
-          background: 'var(--gradient-copper)'
-        }}></div>
-          <div className="absolute bottom-1/6 right-1/3 w-48 h-36 blur-2xl opacity-25 transform rotate-45 rounded-[50%_50%_80%_20%/30%_70%_70%_30%]" style={{
-          background: 'var(--gradient-forest)'
-        }}></div>
+          <svg 
+            className="absolute inset-0 w-full h-full" 
+            viewBox="0 0 1200 600" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="curvedLineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#22c55e" stopOpacity="0.8" />
+                <stop offset="50%" stopColor="#84cc16" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#f97316" stopOpacity="0.8" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M 0 150 Q 300 100 600 120 Q 900 140 1200 100"
+              stroke="url(#curvedLineGradient)"
+              strokeWidth="60"
+              fill="none"
+              className="blur-2xl opacity-40"
+            />
+          </svg>
         </div>
         
         <div className="relative grid lg:grid-cols-2 gap-12 items-center">
@@ -108,7 +96,7 @@ const Index = () => {
           </div>
           <div className="animate-fade-in lg:order-last order-first">
             <div className="relative">
-              <img src={heroImage} alt="PRISM Crystal" className="rounded-2xl shadow-2xl hover-scale w-full h-auto max-w-lg mx-auto" />
+              <img src={heroImage} alt="Growing Revenue Dashboard" className="rounded-2xl shadow-2xl hover-scale w-full h-auto max-w-lg mx-auto" />
               
             </div>
           </div>
