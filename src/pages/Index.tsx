@@ -48,30 +48,38 @@ const Index = () => {
         {/* Abstract Background Elements */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large copper gradient circle - top right */}
-          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full blur-3xl opacity-50 animate-pulse" 
-               style={{ background: 'var(--gradient-copper)' }}></div>
+          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full blur-3xl opacity-50 animate-pulse" style={{
+          background: 'var(--gradient-copper)'
+        }}></div>
           
           {/* Medium teal ellipse - bottom left */}
-          <div className="absolute -bottom-32 -left-32 w-96 h-72 rounded-full blur-2xl opacity-45"
-               style={{ background: 'var(--gradient-teal)' }}></div>
+          <div className="absolute -bottom-32 -left-32 w-96 h-72 rounded-full blur-2xl opacity-45" style={{
+          background: 'var(--gradient-teal)'
+        }}></div>
           
           {/* Large forest accent - center left */}
-          <div className="absolute top-1/3 -left-20 w-80 h-80 rounded-full blur-3xl opacity-40"
-               style={{ background: 'var(--gradient-forest)' }}></div>
+          <div className="absolute top-1/3 -left-20 w-80 h-80 rounded-full blur-3xl opacity-40" style={{
+          background: 'var(--gradient-forest)'
+        }}></div>
           
           {/* Amber accent bubbles */}
-          <div className="absolute top-1/4 right-1/3 w-40 h-40 rounded-full blur-xl opacity-45"
-               style={{ background: 'var(--gradient-amber)' }}></div>
-          <div className="absolute bottom-1/4 left-1/2 w-32 h-32 rounded-full blur-lg opacity-40"
-               style={{ background: 'var(--gradient-amber)' }}></div>
+          <div className="absolute top-1/4 right-1/3 w-40 h-40 rounded-full blur-xl opacity-45" style={{
+          background: 'var(--gradient-amber)'
+        }}></div>
+          <div className="absolute bottom-1/4 left-1/2 w-32 h-32 rounded-full blur-lg opacity-40" style={{
+          background: 'var(--gradient-amber)'
+        }}></div>
           
           {/* Organic blob shapes with color wheel harmony */}
-          <div className="absolute top-1/2 left-1/4 w-60 h-44 blur-2xl opacity-35 transform rotate-12 rounded-[60%_40%_30%_70%/60%_30%_70%_40%]"
-               style={{ background: 'var(--gradient-teal)' }}></div>
-          <div className="absolute top-1/6 right-1/6 w-44 h-56 blur-xl opacity-30 transform -rotate-12 rounded-[40%_60%_70%_30%/40%_70%_30%_60%]"
-               style={{ background: 'var(--gradient-copper)' }}></div>
-          <div className="absolute bottom-1/6 right-1/3 w-48 h-36 blur-2xl opacity-25 transform rotate-45 rounded-[50%_50%_80%_20%/30%_70%_70%_30%]"
-               style={{ background: 'var(--gradient-forest)' }}></div>
+          <div className="absolute top-1/2 left-1/4 w-60 h-44 blur-2xl opacity-35 transform rotate-12 rounded-[60%_40%_30%_70%/60%_30%_70%_40%]" style={{
+          background: 'var(--gradient-teal)'
+        }}></div>
+          <div className="absolute top-1/6 right-1/6 w-44 h-56 blur-xl opacity-30 transform -rotate-12 rounded-[40%_60%_70%_30%/40%_70%_30%_60%]" style={{
+          background: 'var(--gradient-copper)'
+        }}></div>
+          <div className="absolute bottom-1/6 right-1/3 w-48 h-36 blur-2xl opacity-25 transform rotate-45 rounded-[50%_50%_80%_20%/30%_70%_70%_30%]" style={{
+          background: 'var(--gradient-forest)'
+        }}></div>
         </div>
         
         <div className="relative grid lg:grid-cols-2 gap-12 items-center">
@@ -79,7 +87,7 @@ const Index = () => {
             
             <h1 className="text-5xl md:text-6xl font-body font-bold tracking-tight animate-fade-in">
               Crystal Clear
-              <span className="block bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent mx-0 my-0 py-[15px]">
+              <span className="block bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent mx-0 my-0 py-[8px]">
                 Customer Management
               </span>
             </h1>
