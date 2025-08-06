@@ -22,6 +22,7 @@ export default {
 				'mono-heading': ['JetBrains Mono', 'monospace'],
 				'body': ['Inter', 'sans-serif'],
 				'sans': ['Inter', 'sans-serif'],
+				'poppins': ['Poppins', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

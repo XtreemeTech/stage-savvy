@@ -112,7 +112,7 @@ const Index = () => {
           <h2 className="text-3xl font-mono-heading font-bold mb-4">
             Everything you need to manage customers
           </h2>
-          <p className="text-lg font-body text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg font-poppins text-muted-foreground max-w-2xl mx-auto">
             PRISM provides all the essential tools to nurture leads, track progress, and grow your business.
           </p>
         </div>
