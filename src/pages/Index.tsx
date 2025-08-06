@@ -47,19 +47,31 @@ const Index = () => {
       <section className="relative container mx-auto px-4 py-20 overflow-hidden">
         {/* Abstract Background Elements */}
         <div className="absolute inset-0 pointer-events-none">
-          {/* Large forest green gradient circle - top right */}
-          <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-br from-primary/20 to-secondary/15 rounded-full blur-3xl opacity-60 animate-pulse"></div>
+          {/* Large copper gradient circle - top right */}
+          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full blur-3xl opacity-50 animate-pulse" 
+               style={{ background: 'var(--gradient-copper)' }}></div>
           
-          {/* Medium sage green ellipse - bottom left */}
-          <div className="absolute -bottom-24 -left-24 w-80 h-64 bg-gradient-to-tr from-secondary/25 to-accent/20 rounded-full blur-2xl opacity-50"></div>
+          {/* Medium teal ellipse - bottom left */}
+          <div className="absolute -bottom-32 -left-32 w-96 h-72 rounded-full blur-2xl opacity-45"
+               style={{ background: 'var(--gradient-teal)' }}></div>
           
-          {/* Small accent bubbles */}
-          <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-gradient-to-r from-accent/30 to-primary/20 rounded-full blur-xl opacity-40"></div>
-          <div className="absolute bottom-1/3 left-1/3 w-24 h-24 bg-gradient-to-l from-primary/25 to-secondary/20 rounded-full blur-lg opacity-35"></div>
+          {/* Large forest accent - center left */}
+          <div className="absolute top-1/3 -left-20 w-80 h-80 rounded-full blur-3xl opacity-40"
+               style={{ background: 'var(--gradient-forest)' }}></div>
           
-          {/* Organic blob shapes */}
-          <div className="absolute top-1/2 left-1/4 w-48 h-36 bg-gradient-to-br from-accent/15 to-primary/10 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] blur-2xl opacity-30 transform rotate-12"></div>
-          <div className="absolute top-1/6 right-1/6 w-36 h-48 bg-gradient-to-tl from-secondary/20 to-accent/15 rounded-[40%_60%_70%_30%/40%_70%_30%_60%] blur-xl opacity-25 transform -rotate-12"></div>
+          {/* Amber accent bubbles */}
+          <div className="absolute top-1/4 right-1/3 w-40 h-40 rounded-full blur-xl opacity-45"
+               style={{ background: 'var(--gradient-amber)' }}></div>
+          <div className="absolute bottom-1/4 left-1/2 w-32 h-32 rounded-full blur-lg opacity-40"
+               style={{ background: 'var(--gradient-amber)' }}></div>
+          
+          {/* Organic blob shapes with color wheel harmony */}
+          <div className="absolute top-1/2 left-1/4 w-60 h-44 blur-2xl opacity-35 transform rotate-12 rounded-[60%_40%_30%_70%/60%_30%_70%_40%]"
+               style={{ background: 'var(--gradient-teal)' }}></div>
+          <div className="absolute top-1/6 right-1/6 w-44 h-56 blur-xl opacity-30 transform -rotate-12 rounded-[40%_60%_70%_30%/40%_70%_30%_60%]"
+               style={{ background: 'var(--gradient-copper)' }}></div>
+          <div className="absolute bottom-1/6 right-1/3 w-48 h-36 blur-2xl opacity-25 transform rotate-45 rounded-[50%_50%_80%_20%/30%_70%_70%_30%]"
+               style={{ background: 'var(--gradient-forest)' }}></div>
         </div>
         
         <div className="relative grid lg:grid-cols-2 gap-12 items-center">
@@ -82,7 +94,7 @@ const Index = () => {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Button variant="outline" size="lg" className="w-full sm:w-auto hover-scale">
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto hover-scale">
                 Watch Demo
               </Button>
             </div>
