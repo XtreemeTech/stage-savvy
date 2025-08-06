@@ -18,16 +18,16 @@ export const PrismLogo: React.FC<PrismLogoProps> = ({ size = 32, className = "" 
       <defs>
         {/* Gradients for 3D effect */}
         <linearGradient id="prismFront" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.9" />
-          <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.7" />
+          <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.9" />
+          <stop offset="100%" stopColor="hsl(var(--foreground))" stopOpacity="0.7" />
         </linearGradient>
         <linearGradient id="prismTop" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.6" />
-          <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.4" />
+          <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="hsl(var(--foreground))" stopOpacity="0.4" />
         </linearGradient>
         <linearGradient id="prismSide" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.8" />
-          <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.5" />
+          <stop offset="0%" stopColor="hsl(var(--foreground))" stopOpacity="0.8" />
+          <stop offset="100%" stopColor="hsl(var(--foreground))" stopOpacity="0.5" />
         </linearGradient>
       </defs>
       
@@ -36,7 +36,7 @@ export const PrismLogo: React.FC<PrismLogoProps> = ({ size = 32, className = "" 
       <path
         d="M16 6 L24 22 L8 22 Z"
         fill="url(#prismFront)"
-        stroke="hsl(var(--primary-foreground))"
+        stroke="hsl(var(--foreground))"
         strokeWidth="0.3"
       />
       
@@ -44,7 +44,7 @@ export const PrismLogo: React.FC<PrismLogoProps> = ({ size = 32, className = "" 
       <path
         d="M16 6 L20 4 L28 20 L24 22 Z"
         fill="url(#prismTop)"
-        stroke="hsl(var(--primary-foreground))"
+        stroke="hsl(var(--foreground))"
         strokeWidth="0.3"
       />
       
@@ -52,7 +52,7 @@ export const PrismLogo: React.FC<PrismLogoProps> = ({ size = 32, className = "" 
       <path
         d="M24 22 L28 20 L12 20 L8 22 Z"
         fill="url(#prismSide)"
-        stroke="hsl(var(--primary-foreground))"
+        stroke="hsl(var(--foreground))"
         strokeWidth="0.3"
       />
       
@@ -67,22 +67,22 @@ export const PrismLogo: React.FC<PrismLogoProps> = ({ size = 32, className = "" 
         opacity="0.8"
       />
       
-      {/* Refracted spectrum rays coming out */}
+      {/* 7 Refracted rays coming out */}
       <line
         x1="28"
         y1="20"
         x2="31"
-        y2="17"
-        stroke="#ff3333"
+        y2="16"
+        stroke="hsl(var(--foreground))"
         strokeWidth="1.5"
-        opacity="0.9"
+        opacity="0.8"
       />
       <line
         x1="28"
         y1="20"
         x2="31"
-        y2="18"
-        stroke="#ff8833"
+        y2="17.5"
+        stroke="hsl(var(--foreground))"
         strokeWidth="1.5"
         opacity="0.8"
       />
@@ -91,16 +91,16 @@ export const PrismLogo: React.FC<PrismLogoProps> = ({ size = 32, className = "" 
         y1="20"
         x2="31"
         y2="19"
-        stroke="#ffff33"
+        stroke="hsl(var(--foreground))"
         strokeWidth="1.5"
-        opacity="0.9"
+        opacity="0.8"
       />
       <line
         x1="28"
         y1="20"
         x2="31"
         y2="20"
-        stroke="#33ff33"
+        stroke="hsl(var(--foreground))"
         strokeWidth="1.5"
         opacity="0.8"
       />
@@ -109,16 +109,7 @@ export const PrismLogo: React.FC<PrismLogoProps> = ({ size = 32, className = "" 
         y1="20"
         x2="31"
         y2="21"
-        stroke="#3388ff"
-        strokeWidth="1.5"
-        opacity="0.9"
-      />
-      <line
-        x1="28"
-        y1="20"
-        x2="31"
-        y2="22"
-        stroke="#8833ff"
+        stroke="hsl(var(--foreground))"
         strokeWidth="1.5"
         opacity="0.8"
       />
@@ -126,10 +117,19 @@ export const PrismLogo: React.FC<PrismLogoProps> = ({ size = 32, className = "" 
         x1="28"
         y1="20"
         x2="31"
-        y2="23"
-        stroke="#ff33ff"
+        y2="22.5"
+        stroke="hsl(var(--foreground))"
         strokeWidth="1.5"
-        opacity="0.7"
+        opacity="0.8"
+      />
+      <line
+        x1="28"
+        y1="20"
+        x2="31"
+        y2="24"
+        stroke="hsl(var(--foreground))"
+        strokeWidth="1.5"
+        opacity="0.8"
       />
       
       {/* Inner light reflection for depth */}

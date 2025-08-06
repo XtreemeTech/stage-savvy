@@ -29,7 +29,7 @@ const Index = () => {
         <div className="px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <PrismLogo size={32} />
-            <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            <span className="text-xl font-bold text-foreground">
               PRISM
             </span>
           </div>

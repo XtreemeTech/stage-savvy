@@ -4,13 +4,13 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Separator } from '@/components/ui/separator';
 import { 
-  Sparkles, 
   LayoutDashboard, 
   List, 
   BarChart3, 
   LogOut, 
   User
 } from 'lucide-react';
+import { PrismLogo } from '@/components/PrismLogo';
 
 interface SidebarProps {
   currentView: 'kanban' | 'list' | 'metrics';
@@ -35,11 +35,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentView, onViewChange }) =
       {/* PRISM Header */}
       <div className="p-6 border-b border-border">
         <div className="flex items-center space-x-3">
-          <div className="h-8 w-8 rounded-lg bg-gradient-to-r from-primary to-primary/60 flex items-center justify-center">
-            <Sparkles className="h-4 w-4 text-primary-foreground" />
-          </div>
+          <PrismLogo size={24} />
           <div>
-            <h1 className="text-lg font-mono-heading font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            <h1 className="text-lg font-mono-heading font-bold text-foreground">
               PRISM
             </h1>
             <p className="text-xs text-muted-foreground">Customer Management</p>
