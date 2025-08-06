@@ -51,7 +51,7 @@ const Index = () => {
               <Star className="w-3 h-3 mr-1" />
               Customer Relationship Management
             </Badge>
-            <h1 className="text-5xl md:text-6xl font-mono-heading font-bold tracking-tight animate-fade-in">
+            <h1 className="text-5xl md:text-6xl font-body font-bold tracking-tight animate-fade-in">
               Crystal Clear
               <span className="block bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                 Customer Management
@@ -88,20 +88,20 @@ const Index = () => {
       <section className="container mx-auto px-4 py-16 border-y border-muted/20 bg-slate-100">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div className="space-y-2 animate-fade-in" ref={activeUsers.ref}>
-            <div className="text-3xl font-bold text-primary">{activeUsers.displayValue}</div>
-            <div className="text-sm text-muted-foreground">Active Users</div>
+            <div className="text-3xl font-numbers font-bold text-primary">{activeUsers.displayValue}</div>
+            <div className="text-sm font-body text-muted-foreground">Active Users</div>
           </div>
           <div className="space-y-2 animate-fade-in" ref={satisfactionRate.ref}>
-            <div className="text-3xl font-bold text-primary">{satisfactionRate.displayValue}</div>
-            <div className="text-sm text-muted-foreground">Satisfaction Rate</div>
+            <div className="text-3xl font-numbers font-bold text-primary">{satisfactionRate.displayValue}</div>
+            <div className="text-sm font-body text-muted-foreground">Satisfaction Rate</div>
           </div>
           <div className="space-y-2 animate-fade-in" ref={leadsManaged.ref}>
-            <div className="text-3xl font-bold text-primary">{leadsManaged.displayValue}</div>
-            <div className="text-sm text-muted-foreground">Leads Managed</div>
+            <div className="text-3xl font-numbers font-bold text-primary">{leadsManaged.displayValue}</div>
+            <div className="text-sm font-body text-muted-foreground">Leads Managed</div>
           </div>
           <div className="space-y-2 animate-fade-in" ref={conversionBoost.ref}>
-            <div className="text-3xl font-bold text-primary">{conversionBoost.displayValue}</div>
-            <div className="text-sm text-muted-foreground">Conversion Boost</div>
+            <div className="text-3xl font-numbers font-bold text-primary">{conversionBoost.displayValue}</div>
+            <div className="text-sm font-body text-muted-foreground">Conversion Boost</div>
           </div>
         </div>
       </section>
@@ -112,7 +112,7 @@ const Index = () => {
           <h2 className="text-3xl font-mono-heading font-bold mb-4">
             Everything you need to manage customers
           </h2>
-          <p className="text-lg font-poppins text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg font-body text-muted-foreground max-w-2xl mx-auto">
             PRISM provides all the essential tools to nurture leads, track progress, and grow your business.
           </p>
         </div>
@@ -305,20 +305,20 @@ const Index = () => {
                 <h3 className="text-2xl font-mono-heading font-bold">Average Results</h3>
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
-                    <div className="text-3xl font-bold text-primary">45%</div>
-                    <div className="text-sm text-muted-foreground">More Conversions</div>
+                    <div className="text-3xl font-numbers font-bold text-primary">45%</div>
+                    <div className="text-sm font-body text-muted-foreground">More Conversions</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-primary">60%</div>
-                    <div className="text-sm text-muted-foreground">Time Saved</div>
+                    <div className="text-3xl font-numbers font-bold text-primary">60%</div>
+                    <div className="text-sm font-body text-muted-foreground">Time Saved</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-primary">10x</div>
-                    <div className="text-sm text-muted-foreground">Lead Capacity</div>
+                    <div className="text-3xl font-numbers font-bold text-primary">10x</div>
+                    <div className="text-sm font-body text-muted-foreground">Lead Capacity</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-primary">98%</div>
-                    <div className="text-sm text-muted-foreground">Satisfaction</div>
+                    <div className="text-3xl font-numbers font-bold text-primary">98%</div>
+                    <div className="text-sm font-body text-muted-foreground">Satisfaction</div>
                   </div>
                 </div>
               </div>

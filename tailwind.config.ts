@@ -19,10 +19,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'mono-heading': ['JetBrains Mono', 'monospace'],
-				'body': ['Inter', 'sans-serif'],
-				'sans': ['Inter', 'sans-serif'],
-				'poppins': ['Poppins', 'sans-serif'],
+				'mono-heading': ['IBM Plex Mono', 'monospace'],
+				'body': ['Manrope', 'sans-serif'],
+				'sans': ['Manrope', 'sans-serif'],
+				'numbers': ['Roboto Mono', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
