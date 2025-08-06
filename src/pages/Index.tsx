@@ -102,7 +102,7 @@ const Index = () => {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto hover-scale">
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto hover-scale bg-orange-600 hover:bg-orange-500">
                 Watch Demo
               </Button>
             </div>
@@ -379,7 +379,7 @@ const Index = () => {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="border-white/20 text-white bg-slate-600 hover:bg-slate-500">
+              <Button size="lg" variant="outline" className="border-white/20 text-white bg-orange-600 hover:bg-orange-500">
                 Schedule Demo
               </Button>
             </div>
