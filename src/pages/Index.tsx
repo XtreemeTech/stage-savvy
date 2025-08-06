@@ -5,7 +5,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Users, BarChart3, Mail, Shield, Zap, Sparkles, Star, CheckCircle, TrendingUp } from 'lucide-react';
 import heroImage from '@/assets/hero-dashboard.jpg';
+import { useCounterAnimation } from '@/hooks/useCounterAnimation';
 const Index = () => {
+  const activeUsers = useCounterAnimation({ end: 10000, suffix: '+' });
+  const satisfactionRate = useCounterAnimation({ end: 98, suffix: '%' });
+  const leadsManaged = useCounterAnimation({ end: 2500000 });
+  const conversionBoost = useCounterAnimation({ end: 45, suffix: '%' });
+
   return <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
       {/* Header */}
       <header className="border-b border-muted/40 bg-background/80 backdrop-blur-sm sticky top-0 z-50">
@@ -71,20 +77,20 @@ const Index = () => {
       {/* Stats Section */}
       <section className="container mx-auto px-4 py-16 border-y border-muted/20 bg-slate-100">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div className="space-y-2 animate-fade-in">
-            <div className="text-3xl font-bold text-primary">10K+</div>
+          <div className="space-y-2 animate-fade-in" ref={activeUsers.ref}>
+            <div className="text-3xl font-bold text-primary">{activeUsers.displayValue}</div>
             <div className="text-sm text-muted-foreground">Active Users</div>
           </div>
-          <div className="space-y-2 animate-fade-in">
-            <div className="text-3xl font-bold text-primary">98%</div>
+          <div className="space-y-2 animate-fade-in" ref={satisfactionRate.ref}>
+            <div className="text-3xl font-bold text-primary">{satisfactionRate.displayValue}</div>
             <div className="text-sm text-muted-foreground">Satisfaction Rate</div>
           </div>
-          <div className="space-y-2 animate-fade-in">
-            <div className="text-3xl font-bold text-primary">2.5M</div>
+          <div className="space-y-2 animate-fade-in" ref={leadsManaged.ref}>
+            <div className="text-3xl font-bold text-primary">{leadsManaged.displayValue}</div>
             <div className="text-sm text-muted-foreground">Leads Managed</div>
           </div>
-          <div className="space-y-2 animate-fade-in">
-            <div className="text-3xl font-bold text-primary">45%</div>
+          <div className="space-y-2 animate-fade-in" ref={conversionBoost.ref}>
+            <div className="text-3xl font-bold text-primary">{conversionBoost.displayValue}</div>
             <div className="text-sm text-muted-foreground">Conversion Boost</div>
           </div>
         </div>
