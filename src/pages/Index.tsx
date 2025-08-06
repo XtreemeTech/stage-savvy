@@ -44,29 +44,31 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative px-4 py-20 overflow-hidden">
-        {/* Curved gradient line background */}
+        {/* Curved gradient line background - 30% width, flowing diagonally */}
         <div className="absolute inset-0 pointer-events-none">
-          <svg 
-            className="absolute inset-0 w-full h-full" 
-            viewBox="0 0 1200 600" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs>
-              <linearGradient id="curvedLineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#22c55e" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#84cc16" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="#f97316" stopOpacity="0.8" />
-              </linearGradient>
-            </defs>
-            <path
-              d="M 0 150 Q 300 100 600 120 Q 900 140 1200 100"
-              stroke="url(#curvedLineGradient)"
-              strokeWidth="60"
-              fill="none"
-              className="blur-2xl opacity-40"
-            />
-          </svg>
+          <div className="absolute left-0 top-0 w-[30%] h-full">
+            <svg 
+              className="absolute inset-0 w-full h-full" 
+              viewBox="0 0 360 600" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient id="curvedLineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#22c55e" stopOpacity="0.8" />
+                  <stop offset="50%" stopColor="#84cc16" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="#f97316" stopOpacity="0.8" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M 0 150 Q 120 250 240 350 Q 300 400 360 500"
+                stroke="url(#curvedLineGradient)"
+                strokeWidth="80"
+                fill="none"
+                className="blur-2xl opacity-40"
+              />
+            </svg>
+          </div>
         </div>
         
         <div className="relative grid lg:grid-cols-2 gap-12 items-center">
