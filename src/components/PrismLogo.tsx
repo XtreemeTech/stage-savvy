@@ -15,87 +15,135 @@ export const PrismLogo: React.FC<PrismLogoProps> = ({ size = 32, className = "" 
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* Prism triangular shape */}
+      <defs>
+        {/* Gradients for 3D effect */}
+        <linearGradient id="prismFront" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.9" />
+          <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.7" />
+        </linearGradient>
+        <linearGradient id="prismTop" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.4" />
+        </linearGradient>
+        <linearGradient id="prismSide" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.8" />
+          <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.5" />
+        </linearGradient>
+      </defs>
+      
+      {/* 3D Triangular Prism */}
+      {/* Front face (triangle) */}
       <path
-        d="M16 4 L26 16 L16 28 L6 16 Z"
-        fill="hsl(var(--primary))"
+        d="M16 6 L24 22 L8 22 Z"
+        fill="url(#prismFront)"
         stroke="hsl(var(--primary-foreground))"
-        strokeWidth="0.5"
-        opacity="0.9"
+        strokeWidth="0.3"
       />
       
-      {/* Single incoming light ray */}
+      {/* Top face (parallelogram) */}
+      <path
+        d="M16 6 L20 4 L28 20 L24 22 Z"
+        fill="url(#prismTop)"
+        stroke="hsl(var(--primary-foreground))"
+        strokeWidth="0.3"
+      />
+      
+      {/* Right side face (parallelogram) */}
+      <path
+        d="M24 22 L28 20 L12 20 L8 22 Z"
+        fill="url(#prismSide)"
+        stroke="hsl(var(--primary-foreground))"
+        strokeWidth="0.3"
+      />
+      
+      {/* Single incoming white light ray */}
       <line
         x1="2"
-        y1="16"
-        x2="6"
-        y2="16"
+        y1="15"
+        x2="8"
+        y2="15"
         stroke="hsl(var(--foreground))"
         strokeWidth="2"
         opacity="0.8"
       />
       
-      {/* Multiple outgoing light rays - spectrum colors */}
+      {/* Refracted spectrum rays coming out */}
       <line
-        x1="26"
-        y1="16"
-        x2="30"
-        y2="12"
-        stroke="#ff4444"
+        x1="28"
+        y1="20"
+        x2="31"
+        y2="17"
+        stroke="#ff3333"
         strokeWidth="1.5"
         opacity="0.9"
       />
       <line
-        x1="26"
-        y1="16"
-        x2="30"
-        y2="14"
-        stroke="#ff8844"
-        strokeWidth="1.5"
-        opacity="0.8"
-      />
-      <line
-        x1="26"
-        y1="16"
-        x2="30"
-        y2="16"
-        stroke="#ffff44"
-        strokeWidth="1.5"
-        opacity="0.9"
-      />
-      <line
-        x1="26"
-        y1="16"
-        x2="30"
+        x1="28"
+        y1="20"
+        x2="31"
         y2="18"
-        stroke="#44ff44"
+        stroke="#ff8833"
         strokeWidth="1.5"
         opacity="0.8"
       />
       <line
-        x1="26"
-        y1="16"
-        x2="30"
-        y2="20"
-        stroke="#4488ff"
+        x1="28"
+        y1="20"
+        x2="31"
+        y2="19"
+        stroke="#ffff33"
         strokeWidth="1.5"
         opacity="0.9"
       />
-      
-      {/* Inner light reflection */}
-      <polygon
-        points="16,8 22,16 16,24 10,16"
-        fill="url(#prismGradient)"
-        opacity="0.3"
+      <line
+        x1="28"
+        y1="20"
+        x2="31"
+        y2="20"
+        stroke="#33ff33"
+        strokeWidth="1.5"
+        opacity="0.8"
+      />
+      <line
+        x1="28"
+        y1="20"
+        x2="31"
+        y2="21"
+        stroke="#3388ff"
+        strokeWidth="1.5"
+        opacity="0.9"
+      />
+      <line
+        x1="28"
+        y1="20"
+        x2="31"
+        y2="22"
+        stroke="#8833ff"
+        strokeWidth="1.5"
+        opacity="0.8"
+      />
+      <line
+        x1="28"
+        y1="20"
+        x2="31"
+        y2="23"
+        stroke="#ff33ff"
+        strokeWidth="1.5"
+        opacity="0.7"
       />
       
-      <defs>
-        <linearGradient id="prismGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="hsl(var(--primary-foreground))" stopOpacity="0.2" />
-          <stop offset="50%" stopColor="hsl(var(--primary-foreground))" stopOpacity="0.6" />
-          <stop offset="100%" stopColor="hsl(var(--primary-foreground))" stopOpacity="0.1" />
-        </linearGradient>
-      </defs>
+      {/* Inner light reflection for depth */}
+      <polygon
+        points="16,8 22,20 10,20"
+        fill="url(#prismGradient)"
+        opacity="0.2"
+      />
+      
+      <linearGradient id="prismGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="hsl(var(--primary-foreground))" stopOpacity="0.3" />
+        <stop offset="50%" stopColor="hsl(var(--primary-foreground))" stopOpacity="0.6" />
+        <stop offset="100%" stopColor="hsl(var(--primary-foreground))" stopOpacity="0.1" />
+      </linearGradient>
     </svg>
   );
 };
