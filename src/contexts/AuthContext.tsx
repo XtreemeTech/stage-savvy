@@ -32,20 +32,25 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // Check for existing session first
     const getInitialSession = async () => {
       try {
+        console.log('AuthContext: Getting initial session...');
         const { data: { session }, error } = await supabase.auth.getSession();
         if (error) {
           console.error('Error getting session:', error);
         }
         
+        console.log('AuthContext: Initial session result:', { session: !!session, userId: session?.user?.id });
+        
         if (mounted) {
           setSession(session);
           setUser(session?.user ?? null);
           setLoading(false);
+          console.log('AuthContext: Set loading to false after initial session check');
         }
       } catch (error) {
         console.error('Error in getInitialSession:', error);
         if (mounted) {
           setLoading(false);
+          console.log('AuthContext: Set loading to false after error');
         }
       }
     };
@@ -53,6 +58,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // Set up auth state listener
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
+        console.log('AuthContext: Auth state change event:', event, { session: !!session, userId: session?.user?.id });
         if (mounted) {
           setSession(session);
           setUser(session?.user ?? null);

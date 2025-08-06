@@ -15,7 +15,10 @@ const queryClient = new QueryClient();
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { user, loading } = useAuth();
   
+  console.log('ProtectedRoute: Current state:', { user: !!user, loading, userId: user?.id });
+  
   if (loading) {
+    console.log('ProtectedRoute: Showing loading screen');
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center space-y-4">
