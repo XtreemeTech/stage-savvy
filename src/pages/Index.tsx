@@ -91,7 +91,7 @@ const Index = () => {
                 Customer Management
               </span>
             </h1>
-            <p className="text-xl font-body text-muted-foreground max-w-2xl lg:mx-0 mx-auto leading-relaxed animate-fade-in">
+            <p className="text-xl font-body max-w-2xl lg:mx-0 mx-auto leading-relaxed animate-fade-in text-slate-800">
               PRISM refracts your customer data into actionable insights. 
               Manage leads, track opportunities, and automate communications with precision.
             </p>
